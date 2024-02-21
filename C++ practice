@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+class account
+{
+    int number;
+    string holder;
+    double balance;
+    public:
+    void get(int n,string h,double b)
+    {
+        number=n;
+        holder=h;
+        balance=b;
+    }
+    void show()
+    {
+        cout<<"  account number : "<<number<<endl;
+        cout<<"  accound Holder : "<<holder<<endl;
+        cout<<"  crrent balance : "<<balance<<endl;
+    }
+    void deposit(double ba)
+    {
+       
+            balance=balance+ ba;
+        
+    }
+    void withdraw(double w)
+    {
+        if(balance>=w)
+        {
+            balance=balance-w;
+        }
+        else{
+            cout<<" withdraw not possible because not have valid balance ."<<endl;
+        }
+        
+    }
+
+};
+int main()
+{
+    account maruf;
+    maruf.get(23203055," john dee",1000);
+    maruf.show();
+    cout<<"after deposit : "<<endl;
+    maruf.deposit(500.00);
+    maruf.show();
+    cout<<"after withdraw "<<endl;
+    maruf.withdraw(200.50);
+    maruf.show();
+    return 0;
+}
